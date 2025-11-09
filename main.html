@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMCakeRoom — Brownies & Cupcakes</title>
+  <meta name="description" content="SMCakeRoom — Fresh brownies & cupcakes in every flavour. Order online or pick up in-store." />
+  <style>
+    :root{--bg:#fff8f2;--accent:#d97706;--muted:#6b7280;--card:#ffffff;--glass:rgba(255,255,255,0.6)}
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#111}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(217,119,6,0.18)}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;margin-top:32px;align-items:center}
+    .hero h1{font-size:40px;margin:0 0 8px;line-height:1.02}
+    .hero p{color:var(--muted);margin:0 0 16px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 6px 14px rgba(217,119,6,0.18)}
+    .btn-outline{border:1px solid rgba(0,0,0,0.06);padding:10px 16px;border-radius:10px;background:transparent}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 8px 30px rgba(15,23,42,0.06)}
+    .hero-img{width:100%;height:320px;object-fit:cover;border-radius:12px}
+
+    /* Menu */
+    section.menu{margin-top:40px}
+    .flavour-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .item{border-radius:12px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.9),#fff);display:flex;flex-direction:column}
+    .item img{width:100%;height:160px;object-fit:cover}
+    .item-body{padding:12px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+    .item h4{margin:0;font-size:16px}
+    .meta{color:var(--muted);font-size:13px;margin-top:6px}
+    .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+    .add{background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+
+    /* Cart */
+    #cart{position:fixed;right:20px;bottom:20px;width:340px;max-width:92vw;z-index:60}
+    .cart-box{border-radius:12px;padding:12px;background:linear-gradient(180deg,#fff, #fff);box-shadow:0 12px 40px rgba(2,6,23,0.15)}
+    .cart-header{display:flex;align-items:center;justify-content:space-between}
+    .cart-list{max-height:260px;overflow:auto;margin-top:12px}
+    .cart-item{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed #eee}
+    .cart-item img{width:54px;height:54px;object-fit:cover;border-radius:8px}
+    .qty{display:flex;gap:6px;align-items:center}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Sections */
+    .section-title{display:flex;align-items:center;justify-content:space-between}
+    footer{margin-top:60px;padding:28px 0;color:var(--muted);border-top:1px solid #f3e8d8}
+
+    /* Responsive */
+    @media (max-width:880px){.hero{grid-template-columns:1fr;}.hero-img{height:220px}.container{padding:18px}.logo{width:48px;height:48px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SM</div>
+        <div>
+          <div style="font-weight:800">SMCakeRoom</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:2px">Brownies • Cupcakes • Custom</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#brownies">Brownies</a>
+        <a href="#cupcakes">Cupcakes</a>
+        <a href="#order">Order</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Delicious Brownies & Cupcakes — Every Flavour You Crave</h1>
+          <p>Freshly baked daily. Eggless & vegan options available. Mini, Regular & Party sizes. Choose your flavour, customise, and order for pickup or delivery.</p>
+          <div class="cta">
+            <a class="btn" href="#menu">View Menu</a>
+            <a class="btn-outline" href="#order">Place Order</a>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px">
+            <div class="card small">Pickup: Same day (till 4pm)</div>
+            <div class="card small">Custom cakes & party orders: 3+ days notice</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="hero-img" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=80" alt="brownies and cupcakes">
+        </div>
+      </section>
+
+      <section id="menu" class="menu">
+        <div class="section-title">
+          <h2 style="margin:0">Our Flavours</h2>
+          <div class="small">Click + to add to cart</div>
+        </div>
+
+        <h3 id="brownies" style="margin-top:18px">Brownies — Rich & fudgy</h3>
+        <div class="flavour-grid" id="brownie-list">
+          <!-- Brownie items inserted by JS -->
+        </div>
+
+        <h3 id="cupcakes" style="margin-top:28px">Cupcakes — Light & fluffy</h3>
+        <div class="flavour-grid" id="cupcake-list">
+          <!-- Cupcake items inserted by JS -->
+        </div>
+      </section>
+
+      <section id="order" style="margin-top:36px">
+        <div class="section-title"><h2 style="margin:0">Place an Order</h2></div>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+          <form id="orderForm" class="card">
+            <label class="small">Name</label>
+            <input id="oName" required placeholder="Your name" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px">
+
+            <label class="small" style="margin-top:10px">Phone / Email</label>
+            <input id="oContact" required placeholder="Phone or email" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px">
+
+            <label class="small" style="margin-top:10px">Pickup / Delivery Date</label>
+            <input id="oDate" type="date" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px">
+
+            <label class="small" style="margin-top:10px">Notes (flavours, sizes, custom message)</label>
+            <textarea id="oNotes" placeholder="E.g. 2 chocolate brownies (mini), 12 red velvet cupcakes, message: Happy Bday" style="width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-top:6px"></textarea>
+
+            <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+              <button type="button" class="btn" onclick="submitOrder()">Send Order</button>
+              <button type="reset" class="btn-outline">Reset</button>
+            </div>
+
+            <p class="small" style="margin-top:12px;color:var(--muted)">This demo form does not send messages. After you click Send Order you'll see the order summary pop up — hook this form to an email service or backend to receive orders.</p>
+          </form>
+
+          <div class="card">
+            <h4 style="margin:0">Quick Info</h4>
+            <div style="margin-top:6px" class="small">Phone: +91 98765 43210<br>Address: 12 Baker Lane, Your City<br>Email: hello@smcakeroom.com</div>
+
+            <hr style="margin:12px 0;border:none;border-top:1px dashed #eee">
+            <div class="small">Allergens: Contains nuts and dairy in some items. We offer eggless & vegan options on request.</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div><strong>SMCakeRoom</strong><div class="small">© " + new Date().getFullYear() + " SMCakeRoom</div></div>
+        <div class="small">Made with ❤️ — Fresh bakes daily</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Cart UI -->
+  <div id="cart">
+    <div class="cart-box card">
+      <div class="cart-header"><strong>Cart</strong><button onclick="toggleCart()" class="btn-outline" style="padding:6px;border-radius:8px">Close</button></div>
+      <div class="cart-list" id="cartList"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px">
+        <div class="small">Total</div>
+        <div style="font-weight:800" id="cartTotal">₹0</div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px">
+        <button onclick="checkout()" class="btn" style="flex:1">Checkout</button>
+        <button onclick="clearCart()" class="btn-outline" style="flex:0">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data lists for brownies & cupcakes (flavours & sample prices)
+    const brownies = [
+      {id:'b1',name:'Classic Fudge Brownie',desc:'Dense, fudgy, intense chocolate',price:90,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/Cb.webp'},
+      {id:'b2',name:'Walnut Brownie',desc:'Crunchy walnuts and dark chocolate',price:110,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/wb.webp'},
+      {id:'b3',name:'Salted Caramel Brownie',desc:'Caramel pockets + sea salt',price:120,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/salted-caramel-brownies-6.webp'},
+      {id:'b4',name:'Nutella Swirl Brownie',desc:'Hazelnut heaven',price:130,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/nsb.webp'},
+      {id:'b5',name:'Vegan Brownie',desc:'Plant-based, rich & moist',price:100,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/vb.webp'}
+    ];
+
+    const cupcakes = [
+      {id:'c1',name:'Vanilla Bean Cupcake',desc:'Classic vanilla buttercream',price:80,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/vbc.webp'},
+      {id:'c2',name:'Red Velvet Cupcake',desc:'Velvety sponge & cream cheese',price:95,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/rc.webp'},
+      {id:'c3',name:'Salted Caramel Cupcake',desc:'Caramel buttercream & toffee',price:100,img:'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=60'},
+      {id:'c4',name:'Chocolate Overload',desc:'Chocolate sponge & ganache',price:95,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/coc.webp'},
+      {id:'c5',name:'Lemon Blueberry',desc:'Tangy lemon with fresh blueberries',price:90,img:'C:/Users/Subhasri/OneDrive/Desktop/Web Development/lc.webp'}
+    ];
+
+    const cart = {}; // id -> {item, qty}
+
+    function formatPrice(n){return '₹'+n}
+
+    function renderList(){
+      const bwrap = document.getElementById('brownie-list');
+      const cwrap = document.getElementById('cupcake-list');
+      bwrap.innerHTML=''; cwrap.innerHTML='';
+      brownies.forEach(b=> bwrap.appendChild(createItemDom(b)));
+      cupcakes.forEach(c=> cwrap.appendChild(createItemDom(c)));
+    }
+
+    function createItemDom(it){
+      const el = document.createElement('div'); el.className='item';
+      el.innerHTML = `
+        <img src="${it.img}" alt="${it.name}">
+        <div class="item-body">
+          <div>
+            <h4>${it.name}</h4>
+            <div class="meta">${it.desc}</div>
+          </div>
+          <div class="price-row">
+            <div style="font-weight:800">${formatPrice(it.price)}</div>
+            <button class="add" onclick='addToCart("${it.id}")'>+</button>
+          </div>
+        </div>
+      `;
+      return el;
+    }
+
+    function addToCart(id){
+      const item = [...brownies,...cupcakes].find(x=>x.id===id);
+      if(!item) return;
+      if(cart[id]) cart[id].qty += 1; else cart[id] = {item: structuredClone(item), qty:1};
+      renderCart();
+    }
+
+    function renderCart(){
+      const list = document.getElementById('cartList'); list.innerHTML='';
+      let total = 0;
+      Object.values(cart).forEach(({item,qty})=>{
+        const div = document.createElement('div'); div.className='cart-item';
+        div.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <div style="flex:1">
+            <div style="font-weight:700">${item.name}</div>
+            <div class="small">${formatPrice(item.price)} × ${qty} = ${formatPrice(item.price * qty)}</div>
+          </div>
+          <div class="qty">
+            <button onclick='changeQty("${item.id}", -1)'>-</button>
+            <div class="small" style="min-width:22px;text-align:center">${qty}</div>
+            <button onclick='changeQty("${item.id}", 1)'>+</button>
+          </div>
+        `;
+        list.appendChild(div);
+        total += item.price * qty;
+      });
+      document.getElementById('cartTotal').innerText = formatPrice(total);
+    }
+
+    function changeQty(id,delta){
+      if(!cart[id]) return;
+      cart[id].qty += delta;
+      if(cart[id].qty <= 0) delete cart[id];
+      renderCart();
+    }
+
+    function clearCart(){
+      for(const k in cart) delete cart[k]; renderCart();
+    }
+
+    function toggleCart(){
+      const c = document.getElementById('cart'); c.style.display = (c.style.display === 'none' ? 'block' : 'none');
+    }
+
+    function checkout(){
+      const total = Object.values(cart).reduce((s,{item,qty})=> s + item.price*qty, 0);
+      if(total === 0){alert('Your cart is empty');return}
+      alert('Checkout — total '+formatPrice(total)+'\nThis is a demo. Integrate payment gateway for real orders.');
+    }
+
+    // Order form demo submit
+    function submitOrder(){
+      const name = document.getElementById('oName').value.trim();
+      const contact = document.getElementById('oContact').value.trim();
+      const date = document.getElementById('oDate').value;
+      const notes = document.getElementById('oNotes').value.trim();
+      const items = Object.values(cart).map(c=> `${c.item.name} x${c.qty}`).join(', ');
+      if(!name || !contact){alert('Please enter name and contact');return}
+      const summary = `Order for ${name}\nContact: ${contact}\nDate: ${date || 'ASAP'}\nItems: ${items || 'No items selected'}\nNotes: ${notes || '-'}\n\n(THIS IS A DEMO ORDER — connect form to backend to receive orders)`;
+      alert(summary);
+    }
+
+    // Render at load
+    renderList(); renderCart();
+  </script>
+</body>
+</html>
